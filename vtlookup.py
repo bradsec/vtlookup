@@ -5,7 +5,6 @@ Name:           vtlookup.py
 Modified:       12 DEC 2021
 Author:         Mark Bradley
 Description:    Lookup file hash values using VirusTotal API v3
-License:        MIT (https://opensource.org/licenses/MIT)
 """
 
 
@@ -64,11 +63,11 @@ def block_heading(text):
     header_text = text.upper()
     header_length = len(header_text)
     box_width = int(header_length)
-    print(f'')
+    print()
     print(f'{"+":-<{box_width+5}}+')
     print(f'{"|":<3}{header_text:^{box_width}}{"|":>3}')
     print(f'{"+":=<{box_width+5}}+')
-    print(f'')
+    print()
 
 
 def hash_file(filename):
