@@ -4,7 +4,8 @@
 
 **Prerequisite:** A VirusTotal API key is required and must be set as an environment variable with a name of `VT_API_KEY`. Get a free public API key by completing the signup at https://www.virustotal.com/gui/join-us.
 
-1. Download or clone the `vtlookup` repository 
+1. Download or clone the `vtlookup` repository  
+`git clone https://github.com/bradsec/vtlookup.git`
 
 2. Set the `VT_API_KEY` environment variable:
 
