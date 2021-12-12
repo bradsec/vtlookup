@@ -129,7 +129,7 @@ def format_json(data):
                 print("\033[91m{:<30} {:<30}\033[0m".format(
                     k, str(v["result"])))
         print(
-            f'\n\033[1m\033[91mWARNING: {total_detections} of {total_vendors} security vendors flagged a file with this hash value as malicious\033[0m')
+            f'\n\033[1m\033[91mWARNING: {total_detections} of {total_vendors} security vendors flagged this file hash value as malicious\033[0m')
         basicProp = {
             "First submission date": str(datetime.fromtimestamp(data["data"]["attributes"]["first_submission_date"])),
             "Last analysis date": str(datetime.fromtimestamp(data["data"]["attributes"]["last_analysis_date"])),
