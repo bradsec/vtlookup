@@ -1,30 +1,37 @@
-# VirusTotal Hash Lookup using API v3 and Python
+# Python3 VirusTotal API v3 File Hash Lookup
 
-### Download or clone the repository, see usage details below.
+### Getting started  
 
-A VirusTotal public API key is required and must be set as an environment variable.
-Please set the environment variable with a name of `VT_API_KEY`. If you don't have a key signup at https://www.virustotal.com/gui/join-us.
+**Prerequisite:** A VirusTotal API key is required and must be set as an environment variable with a name of `VT_API_KEY`. You can get a free public API key by completing the signup at https://www.virustotal.com/gui/join-us.
 
-Use the following terminal commands to set the environment API key variable:
+1. Download or clone the `vtlookup` repository 
+
+2. Set the `VT_API_KEY` environment variable:
 
 For Linux users -
 ```
-> VT_API_KEY="YOUR_VIRUSTOTAL_APIKEY"
-> export VT_API_KEY
+VT_API_KEY="YOUR_VIRUSTOTAL_APIKEY"
+export VT_API_KEY
 ```
 
 For Windows users -
 ```
-> setx VT_API_KEY "YOUR_VIRUSTOTAL_APIKEY"
+setx VT_API_KEY "YOUR_VIRUSTOTAL_APIKEY"
 ```
 
-USAGE EXAMPLES:
+### Usage examples (running from terminal)
 
-By plain text hash -
-> `python3 vtlookup.py -hash 4534c2d2d89c40929adb71f9d52b650c`
+- Lookup using plain text hash *(hashValue can be md5, sha1, or sha256)*  -  
+`python3 vtlookup.py -hash hashValue`  
+*The below example will return detections:*  
+`python3 vtlookup.py -hash a2f6b977b849ba588b88c81b68b4535c`  
 
-By getting sha256 hash from a file on system
-> `python3 vtlookup.py -file myfile.ext`
+- Lookup by getting the sha256 hash from a local file -  
+`python3 vtlookup.py -file specifyfilename.ext`
 
-Offline debug using local json file
-> `python3 vtlookup.py -debug text.json`
+- Offline debug using the included `test.json` file -  
+`python3 vtlookup.py -debug test.json`
+
+### Troubleshooting
+
+API error code descriptions can be found at: https://developers.virustotal.com/reference/errors  
