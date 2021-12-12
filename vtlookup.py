@@ -20,16 +20,18 @@ from datetime import datetime
 def usage():
     print('''
 
-    USAGE EXAMPLES:
+    Usage Examples:
 
-    By plain text hash -
-    > python3 vtlookup.py -hash 4534c2d2d89c40929adb71f9d52b650c
+    Lookup using plain text hash (hashValue can be md5, sha1, or sha256) -
+    > python3 vtlookup.py -hash hashValue
+    The below example will return detections:
+    > python3 vtlookup.py -hash a2f6b977b849ba588b88c81b68b4535c
 
-    By getting has from a file on system
-    > python3 vtlookup.py -file myfile.ext
+    Lookup by getting the sha256 hash from a local file -
+    > python3 vtlookup.py -file specifyfilename.ext
 
-    Offline debug using local json file
-    > python3 vtlookup.py -debug text.json
+    Offline debug using the included test.json file -
+    > python3 vtlookup.py -debug test.json
 
     ''')
 
@@ -37,12 +39,13 @@ def usage():
 def missing_api_key():
     print('''
     
-    A VirusTotal public API key is required and must be set as an environment variable.
-    Please set the environment variable with a name of VT_API_KEY.
+    Prerequisite: A VirusTotal API key is required and must
+    be set as an environment variable with a name of VT_API_KEY.
+    Get a free public API key by completing the signup at 
+    https://www.virustotal.com/gui/join-us.
 
-    If you don't have a key signup at https://www.virustotal.com/gui/join-us.
-
-    Use the following terminal commands:
+    Use the following terminal commands to set the
+    local VT_API_KEY enviroment variable:
 
     For Linux users -
     > VT_API_KEY="YOUR_VIRUSTOTAL_APIKEY"
