@@ -122,6 +122,8 @@ def format_json(data):
     total_vendors = 0
     total_detections = 0
     if "data" in data:
+        print("\033[1m\033[91m{:<30} {:<30}\033[0m".format(
+                        "Security Vendor", "Detection"))    
         for k, v in data["data"]["attributes"]["last_analysis_results"].items():
             total_vendors += 1
             if str(v["result"]) != "None":
@@ -129,7 +131,7 @@ def format_json(data):
                 print("\033[91m{:<30} {:<30}\033[0m".format(
                     k, str(v["result"])))
         print(
-            f'\n\033[1m\033[91mWARNING: {total_detections} of {total_vendors} security vendors flagged this file hash value as malicious\033[0m')
+            f'\n\033[1m\033[91mWARNING: {total_detections} of {total_vendors} Security Vendors flagged this file hash value as malicious\033[0m')
         basicProp = {
             "First submission date": str(datetime.fromtimestamp(data["data"]["attributes"]["first_submission_date"])),
             "Last analysis date": str(datetime.fromtimestamp(data["data"]["attributes"]["last_analysis_date"])),
